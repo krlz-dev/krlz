@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Container from "@/components/ui/Container";
 
 export default function Hero() {
@@ -15,8 +14,8 @@ export default function Hero() {
         <p className="font-display text-[clamp(1.2rem,3vw,2rem)] font-normal text-text-secondary mb-8 max-w-[600px] opacity-0 animate-fade-slide-up [animation-delay:0.6s]">
           Software Engineer, MSc. Full-stack architect building scalable systems with 14+ years of craft.
         </p>
-        <Link
-          href="/projects"
+        <a
+          href="#projects"
           className="inline-flex items-center gap-3 font-mono text-[0.75rem] font-medium tracking-[0.1em] uppercase text-bg-primary bg-accent py-4 px-8 rounded-sm no-underline transition-all duration-300 opacity-0 animate-fade-slide-up [animation-delay:0.8s] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_var(--color-accent-glow)]"
         >
           View my work
@@ -36,7 +35,7 @@ export default function Hero() {
               d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
             />
           </svg>
-        </Link>
+        </a>
       </Container>
       <div className="scroll-hint-line absolute bottom-12 left-8 font-mono text-[0.65rem] tracking-[0.15em] uppercase text-text-muted [writing-mode:vertical-lr] flex items-center gap-4 opacity-0 animate-fade-in [animation-delay:1.5s] max-md:hidden">
         Scroll

@@ -1,0 +1,42 @@
+# Carlos Rojas — Software Engineer | krlz.dev
+
+> Senior Software Engineer with MSc. in Software Engineering and 14+ years of experience in full-stack development, microservices architecture, cloud-native systems, and AI-powered applications. Based in Santiago, Chile.
+
+Carlos Rojas specializes in Java, Scala, TypeScript, and Python. He has built healthcare platforms processing millions of patient records (FHIR/Medmij compliant), logistics and telemetry systems on AWS, and AI applications using LangChain and RAG architectures. He holds a Master's degree from Innopolis University, Russia.
+
+## Projects
+
+- [kit-a — Architecture & Planning Toolkit](https://kit-a.com/): Browser-based toolkit for system architecture diagrams and Gantt project planning. Co-founded with maryaleks.dev.
+- [ZooMinder — Pet Medication Tracker](https://zoo-minder.com/): Android app for scheduling pet medication reminders and tracking treatment histories. Co-founded with maryaleks.dev.
+- [Constitutional AI Assistant](https://asistente-constitucional.vercel.app/): AI-powered legal assistant using RAG architecture for Bolivia's constitutional data, designed to prevent hallucinations.
+- [Logistics & Telemetry Platform](https://krlz.dev/projects/tracktec-logistics/): Full-stack logistics software at TrackTec with Kafka integration, automated data pipelines, and AWS infrastructure.
+- [Healthcare FHIR System](https://krlz.dev/projects/portavita-health-fhir/): FHIR HAPI-based healthcare system for the Tatarstan government with Spring Boot, Python tooling, and Kafka legacy integration.
+- [DVZA Healthcare Platform](https://krlz.dev/projects/dvza-healthcare-platform/): Data services platform for Dutch healthcare institutions processing millions of patient records, Medmij and FHIR compliant.
+- [Application-Aware Disaster Recovery](https://krlz.dev/projects/acronis-disaster-recovery/): Research at Acronis on disaster recovery and data resilience, published as academic paper at Innopolis University.
+- [COFAR Labs Data Systems](https://krlz.dev/projects/cofar-data-systems/): System module improvements and monolith-to-microservices migration for a pharmaceutical laboratory.
+- [E-Constitucional](https://krlz.dev/projects/econstitucional/): Bolivia's first free online constitutional encyclopedia, built with the Vice Presidency Office.
+
+## Skills
+
+- **Languages:** TypeScript, JavaScript, Java, Scala, Python, HTML/CSS, Bash
+- **Frontend:** React, Next.js, Angular, Svelte, Vue, Tailwind CSS
+- **Backend:** Spring Boot, Node.js, Express, Akka, Flask, LangChain
+- **Data & Messaging:** PostgreSQL, MySQL, Redis, Kafka, RabbitMQ, DynamoDB, ElasticSearch
+- **DevOps & Cloud:** Docker, Kubernetes, AWS, Jenkins, CI/CD, Linux
+- **Architecture:** Microservices, MVC, OOD, Functional Patterns, OAuth2/OpenID, FHIR
+
+## Education
+
+- MSc. Information Technology: Software Engineering — Innopolis University, Russia
+- BSc. Systems Engineering — Universidad Nuestra Señora de La Paz, Bolivia
+- Software Engineering Specialization — Hong Kong University of Science and Technology
+- Functional Programming in Scala — EPFL (École polytechnique fédérale de Lausanne)
+- Build RAG Applications — IBM
+
+## Contact
+
+- Email: carlosandresmonserrat@gmail.com
+- GitHub: https://github.com/krlz-dev
+- LinkedIn: https://linkedin.com/in/krlz
+- Dev.to: https://dev.to/krlz
+- Telegram: @candresmon

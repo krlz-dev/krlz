@@ -35,11 +35,32 @@ export default async function ProjectDetailPage({
   const project = getProjectBySlug(slug);
   const contentHtml = await getProjectHtml(slug);
 
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: project.title,
+    description: project.description,
+    datePublished: project.date,
+    dateModified: project.date,
+    url: `https://krlz.dev/projects/${slug}`,
+    author: {
+      "@type": "Person",
+      "@id": "https://krlz.dev/#person",
+      name: "Carlos Rojas",
+      url: "https://krlz.dev",
+    },
+    keywords: project.stack.join(", "),
+  };
+
   return (
     <div className="pt-32 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+      />
       <Container className="max-w-[800px]">
         <Link
-          href="/projects"
+          href="/#projects"
           className="inline-flex items-center gap-2 font-mono text-[0.7rem] tracking-[0.1em] uppercase text-text-muted no-underline mb-12 transition-colors duration-300 hover:text-accent"
         >
           <svg

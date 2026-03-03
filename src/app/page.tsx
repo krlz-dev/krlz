@@ -9,12 +9,14 @@ export default function Home() {
   const projects = getAllProjects();
 
   return (
-    <>
+    <main>
       <Hero />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsGrid projects={projects} />
+      <article>
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsGrid projects={projects} />
+      </article>
       <ContactSection />
-    </>
+    </main>
   );
 }
