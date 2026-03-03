@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://krlz.dev/sitemap.xml
