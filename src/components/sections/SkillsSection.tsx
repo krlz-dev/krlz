@@ -5,16 +5,28 @@ import SkillTag from "@/components/ui/SkillTag";
 
 const categories = [
   {
+    title: "Languages",
+    skills: ["TypeScript", "JavaScript", "Java", "Scala", "Python", "HTML / CSS", "Bash"],
+  },
+  {
     title: "Frontend",
-    skills: ["TypeScript", "React", "Angular", "Next.js", "Tailwind CSS", "HTML / CSS"],
+    skills: ["React", "Next.js", "Angular", "Svelte", "Vue", "Polymer", "Tailwind CSS"],
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Python", "PostgreSQL", "REST APIs", "GraphQL", "Docker"],
+    skills: ["Spring Boot", "Node.js", "Express", "Akka", "Flask", "LangChain", "REST APIs"],
   },
   {
-    title: "Tools & Platforms",
-    skills: ["Git", "AWS", "Linux", "CI/CD", "Figma", "Supabase"],
+    title: "Data & Messaging",
+    skills: ["PostgreSQL", "MySQL", "Redis", "Kafka", "RabbitMQ", "DynamoDB", "ElasticSearch"],
+  },
+  {
+    title: "DevOps & Cloud",
+    skills: ["Docker", "Kubernetes", "AWS", "Jenkins", "CI/CD", "Linux", "Git"],
+  },
+  {
+    title: "Architecture & Testing",
+    skills: ["Microservices", "MVC", "OOD", "Functional Patterns", "OAuth2 / OpenID", "Playwright", "Puppeteer"],
   },
 ];
 

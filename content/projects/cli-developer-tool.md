@@ -1,12 +1,14 @@
 ---
-title: "CLI Developer Tool"
-description: "Command-line utility for scaffolding projects, managing configurations, and automating repetitive dev workflows."
-stack: ["Python", "Click", "Docker", "Shell"]
-url: "https://github.com/krlz"
-date: "2024-12-01"
+title: "Logistics & Telemetry Platform"
+description: "Full-stack development of logistics and telemetry software at TrackTec, integrating legacy systems with Kafka, automated data pipelines, and AWS cloud infrastructure."
+stack: ["Java", "Spring Boot", "Angular", "Python", "Kafka", "AWS", "PostgreSQL"]
+url: "https://github.com/krlz-dev"
+date: "2024-01-01"
 featured: true
 ---
 
-A powerful command-line utility designed to streamline developer workflows. Handles project scaffolding, configuration management, and automation of repetitive tasks.
+As an IT Development Engineer at TrackTec S.A. (2024-2026) in Santiago, Chile, I contributed to the development and optimization of software systems focused on logistics and telemetry services, working across both backend and frontend layers.
 
-Built with Python and Click for an intuitive CLI experience, with Docker integration for consistent development environments and shell script generation for custom automation pipelines.
+Key achievements: integrated backend systems with legacy infrastructure using Kafka, ensuring data integrity and operational continuity. Performed analysis of deployed systems, validating scalability and resource usage under production-like data volumes. Developed automated scripts and processes to extract and analyze data from multiple company sources, reducing manual effort. Created and documented APIs and service functionalities for both internal and external integrations.
+
+Tech stack included Java, Spring Boot, Python, JavaScript, Loopback, DynamoDB, Angular, PostgreSQL, S3, Kafka, EC2, ECS, ElasticSearch, Redis, and Caffeine.

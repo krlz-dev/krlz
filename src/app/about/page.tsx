@@ -5,11 +5,11 @@ import SkillsSection from "@/components/sections/SkillsSection";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Carlos — a developer building for the web with a focus on performance, usability, and attention to detail.",
+    "Carlos Rojas — MSc. Software Engineer with 14+ years of experience in full-stack development, microservices architecture, and AI applications.",
   openGraph: {
     title: "About — krlz.dev",
     description:
-      "Learn about Carlos — a developer building for the web with a focus on performance, usability, and attention to detail.",
+      "Carlos Rojas — MSc. Software Engineer with 14+ years of experience in full-stack development, microservices architecture, and AI applications.",
   },
 };
 

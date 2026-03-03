@@ -20,16 +20,16 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "krlz.dev — Carlos | Developer",
+    default: "krlz.dev — Carlos Rojas | Software Engineer",
     template: "%s — krlz.dev",
   },
   description:
-    "Carlos — Developer portfolio. Building digital experiences with code and craft.",
+    "Carlos Rojas — Software Engineer, MSc. 14+ years building scalable full-stack systems, microservices, and AI-powered applications.",
   metadataBase: new URL("https://krlz.dev"),
   openGraph: {
-    title: "krlz.dev — Carlos | Developer",
+    title: "krlz.dev — Carlos Rojas | Software Engineer",
     description:
-      "Developer portfolio. Building digital experiences with code and craft.",
+      "Software Engineer, MSc. 14+ years building scalable full-stack systems, microservices, and AI-powered applications.",
     url: "https://krlz.dev",
     siteName: "krlz.dev",
     locale: "en_US",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "krlz.dev — Carlos | Developer",
+    title: "krlz.dev — Carlos Rojas | Software Engineer",
     description:
-      "Developer portfolio. Building digital experiences with code and craft.",
+      "Software Engineer, MSc. 14+ years building scalable full-stack systems, microservices, and AI-powered applications.",
   },
   robots: {
     index: true,
@@ -50,11 +50,12 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Carlos",
+  name: "Carlos Rojas",
   url: "https://krlz.dev",
-  jobTitle: "Developer",
+  jobTitle: "Software Engineer",
+  description: "MSc. Software Engineering. 14+ years of experience in full-stack development, microservices architecture, and AI applications.",
   sameAs: [
-    "https://github.com/krlz",
+    "https://github.com/krlz-dev",
     "https://linkedin.com/in/krlz",
   ],
 };

@@ -19,7 +19,7 @@ export default function ContactSection() {
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <ContactLink
-                href="mailto:hello@krlz.dev"
+                href="mailto:carlosandresmonserrat@gmail.com"
                 label="Email"
                 icon={
                   <svg
@@ -40,7 +40,7 @@ export default function ContactSection() {
                 }
               />
               <ContactLink
-                href="https://github.com/krlz"
+                href="https://github.com/krlz-dev"
                 label="GitHub"
                 external
                 icon={

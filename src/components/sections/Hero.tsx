@@ -13,7 +13,7 @@ export default function Hero() {
           KRLZ<span className="hero-accent-dot text-accent relative inline-block">.</span>
         </h1>
         <p className="font-display text-[clamp(1.2rem,3vw,2rem)] font-normal text-text-secondary mb-8 max-w-[600px] opacity-0 animate-fade-slide-up [animation-delay:0.6s]">
-          Developer crafting digital experiences with clean code and sharp design.
+          Software Engineer, MSc. Full-stack architect building scalable systems with 14+ years of craft.
         </p>
         <Link
           href="/projects"
