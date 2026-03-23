@@ -56,7 +56,7 @@ export default function ContactSection() {
                 }
               />
               <ContactLink
-                href="https://linkedin.com/in/krlz"
+                href="https://www.linkedin.com/in/devcarlos/"
                 label="LinkedIn"
                 external
                 icon={

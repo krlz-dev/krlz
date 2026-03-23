@@ -106,7 +106,7 @@ const jsonLd = [
       ],
       sameAs: [
         "https://github.com/krlz-dev",
-        "https://linkedin.com/in/krlz",
+        "https://www.linkedin.com/in/devcarlos/",
         "https://dev.to/krlz",
       ],
     },

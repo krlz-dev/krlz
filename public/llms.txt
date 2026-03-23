@@ -37,6 +37,6 @@ Carlos Rojas specializes in Java, Scala, TypeScript, and Python. He has built he
 
 - Email: carlosandresmonserrat@gmail.com
 - GitHub: https://github.com/krlz-dev
-- LinkedIn: https://linkedin.com/in/krlz
+- LinkedIn: https://www.linkedin.com/in/devcarlos/
 - Dev.to: https://dev.to/krlz
 - Telegram: @candresmon
