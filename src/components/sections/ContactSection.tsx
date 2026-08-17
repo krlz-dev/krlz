@@ -14,10 +14,21 @@ export default function ContactSection() {
               Let&apos;s <span className="text-accent">talk</span>.
             </h2>
             <p className="text-base text-text-secondary mb-12 leading-[1.7]">
-              Got a project in mind or just want to say hi? I&apos;m always open to new
-              opportunities and interesting conversations.
+              I am open to Senior Software Engineer, Technical Lead and architecture opportunities with teams building complex products at scale. Based in Santiago, Chile and available for international remote collaboration.
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
+              <ContactLink
+                href="/Carlos_Rojas_Senior_Software_Engineer_EN.pdf"
+                label="CV · English"
+                icon={<span aria-hidden="true">↓</span>}
+                download
+              />
+              <ContactLink
+                href="/Carlos_Rojas_Ingeniero_Software_Senior_ES.pdf"
+                label="CV · Español"
+                icon={<span aria-hidden="true">↓</span>}
+                download
+              />
               <ContactLink
                 href="mailto:carlosandresmonserrat@gmail.com"
                 label="Email"

@@ -1,16 +1,16 @@
 ---
 title: "Logistics & Telemetry Platform"
-description: "Full-stack development of logistics and telemetry software at TrackTec, integrating legacy systems with Kafka, automated data pipelines, and AWS infrastructure."
+description: "Owned logistics products end to end, migrating six legacy modules and adding four new ones while introducing bounded-memory processing, Kafka, Redis and AWS CDK."
 stack: ["Java", "Spring Boot", "Angular", "Python", "Kafka", "AWS", "PostgreSQL", "Redis"]
 url: "https://github.com/krlz-dev"
 date: "2024-01-01"
 featured: true
 ---
 
-As an IT Development Engineer at TrackTec S.A. (2024-2026) in Santiago, Chile, I contributed to the development and optimization of software systems focused on logistics and telemetry services, working across both backend and frontend layers.
+As a Fullstack Software Engineer at Tracktec S.A. (2024-present) in Santiago, Chile, I build B2B SaaS products for industrial telemetry and logistics.
 
-Integrated backend systems with legacy infrastructure using Kafka, ensuring data integrity and operational continuity. Performed analysis of deployed systems, validating scalability and resource usage under production-like data volumes. Developed automated scripts and processes to extract and analyze data from multiple company sources, reducing manual effort. Created and documented APIs and service functionalities for both internal and external integrations.
+I own SGT Reservas V2 end to end, defining its versioned API architecture and migrating six legacy modules while delivering four new modules. I also delivered Embarques to Google Play and the App Store, including Auth0, route selection, OCR of Chilean identity cards and seat assignment.
 
-Worked closely with clients and internal stakeholders to gather and analyze functional and non-functional requirements, translating them into actionable development tasks.
+For high-volume reports, I established bounded-memory processing over millions of records, buffered S3 writes and live job status over WebSockets and Server-Sent Events. I improved Angular monitoring and event-explorer views with server-side pagination, virtualized tables and real-time updates, and introduced Redis caching, Kafka integration and AWS CDK infrastructure-as-code standards.
 
 Tech stack: Java, Spring Boot, Python, JavaScript, Loopback, DynamoDB, Angular, PostgreSQL, S3, Kafka, EC2, ECS, ElasticSearch, Redis, Caffeine, Linux, Git, Bash.

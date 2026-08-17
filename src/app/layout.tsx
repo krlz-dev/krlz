@@ -20,16 +20,16 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "krlz.dev — Carlos Rojas | Software Engineer",
+    default: "Carlos Rojas — Senior Software Engineer | Distributed Systems",
     template: "%s — krlz.dev",
   },
   description:
-    "Carlos Rojas — Software Engineer, MSc. 14+ years building scalable full-stack systems, microservices, and AI-powered applications.",
+    "Senior software engineer with 14+ years designing distributed systems, cloud-native platforms and full-stack products across healthcare, logistics and telemetry.",
   metadataBase: new URL("https://krlz.dev"),
   openGraph: {
-    title: "krlz.dev — Carlos Rojas | Software Engineer",
+    title: "Carlos Rojas — Senior Software Engineer",
     description:
-      "Software Engineer, MSc. 14+ years building scalable full-stack systems, microservices, and AI-powered applications.",
+      "Senior software engineer building distributed systems and production platforms across healthcare, logistics and telemetry.",
     url: "https://krlz.dev",
     siteName: "krlz.dev",
     locale: "en_US",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "krlz.dev — Carlos Rojas | Software Engineer",
+    title: "Carlos Rojas — Senior Software Engineer",
     description:
-      "Software Engineer, MSc. 14+ years building scalable full-stack systems, microservices, and AI-powered applications.",
+      "Senior software engineer building distributed systems and production platforms across healthcare, logistics and telemetry.",
   },
   robots: {
     index: true,
@@ -61,7 +61,7 @@ const jsonLd = [
       image: "https://krlz.dev/assets/profile.png",
       jobTitle: "Senior Software Engineer",
       description:
-        "Software Engineer with MSc. in Software Engineering from Innopolis University and 14+ years of experience in full-stack development, microservices architecture, cloud-native systems, and AI-powered applications using LangChain and RAG.",
+        "Senior Software Engineer with an MSc. in Software Engineering and 14+ years designing reliable distributed systems and production platforms for healthcare, logistics and data-intensive products.",
       email: "carlosandresmonserrat@gmail.com",
       knowsLanguage: ["English", "Spanish"],
       nationality: { "@type": "Country", name: "Bolivia" },
@@ -118,7 +118,7 @@ const jsonLd = [
     url: "https://krlz.dev",
     name: "krlz.dev",
     description:
-      "Portfolio of Carlos Rojas — Senior Software Engineer with 14+ years of experience in microservices, full-stack development, and AI applications.",
+      "Portfolio of Carlos Rojas — senior software engineer and distributed-systems architect with 14+ years of production experience.",
     author: { "@id": "https://krlz.dev/#person" },
   },
   {
@@ -132,7 +132,7 @@ const jsonLd = [
         position: 1,
         url: "https://kit-a.com/",
         name: "kit-a — Architecture & Planning Toolkit",
-        description: "Browser-based toolkit for system architecture diagrams and Gantt project planning.",
+        description: "Browser-based architecture and planning toolkit covering more than 1,800 cloud components.",
       },
       {
         "@type": "ListItem",
@@ -153,14 +153,14 @@ const jsonLd = [
         position: 4,
         url: "https://krlz.dev/projects/tracktec-logistics/",
         name: "Logistics & Telemetry Platform",
-        description: "Full-stack logistics software with Kafka, AWS, and automated data pipelines at TrackTec.",
+        description: "Logistics and telemetry products with versioned APIs, bounded-memory processing, Kafka, Redis and AWS CDK.",
       },
       {
         "@type": "ListItem",
         position: 5,
         url: "https://krlz.dev/projects/dvza-healthcare-platform/",
         name: "DVZA Healthcare Platform",
-        description: "Data services platform for Dutch healthcare processing millions of FHIR-compliant patient records.",
+        description: "Healthcare platform decomposition and Kafka Streams architecture supporting regulated FHIR/Medmij workflows over millions of records.",
       },
     ],
   },

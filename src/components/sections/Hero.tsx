@@ -8,17 +8,16 @@ export default function Hero() {
           {"// Hello, world"}
           <span className="inline-block w-2 h-3.5 bg-accent ml-1 animate-blink align-middle" />
         </p>
-        <h1 className="font-display text-[clamp(4rem,12vw,10rem)] font-bold leading-[0.9] tracking-[-0.04em] text-text-primary mb-6 opacity-0 animate-fade-slide-up [animation-delay:0.4s]">
-          KRLZ<span className="hero-accent-dot text-accent relative inline-block">.</span>
+        <h1 className="font-display text-[clamp(3.5rem,10vw,8rem)] font-bold leading-[0.9] tracking-[-0.04em] text-text-primary mb-6 opacity-0 animate-fade-slide-up [animation-delay:0.4s]">
+          Senior Software Engineer
         </h1>
         <p className="font-display text-[clamp(1.2rem,3vw,2rem)] font-normal text-text-secondary mb-8 max-w-[600px] opacity-0 animate-fade-slide-up [animation-delay:0.6s]">
-          Software Engineer, MSc. Full-stack architect building scalable systems with 14+ years of craft.
+          I design reliable distributed systems and production platforms for healthcare, logistics and data-intensive products.
         </p>
-        <a
-          href="#projects"
-          className="inline-flex items-center gap-3 font-mono text-[0.75rem] font-medium tracking-[0.1em] uppercase text-bg-primary bg-accent py-4 px-8 rounded-sm no-underline transition-all duration-300 opacity-0 animate-fade-slide-up [animation-delay:0.8s] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_var(--color-accent-glow)]"
-        >
-          View my work
+        <p className="text-base text-text-secondary max-w-[680px] mb-8 opacity-0 animate-fade-slide-up [animation-delay:0.7s]">14+ years shipping production software across Chile, Russia, the Netherlands and Bolivia—from system decomposition and Kafka architectures to cloud infrastructure and customer-facing applications.</p>
+        <div className="flex flex-wrap gap-4 opacity-0 animate-fade-slide-up [animation-delay:0.8s]">
+        <a href="#projects" className="inline-flex items-center gap-3 font-mono text-[0.75rem] font-medium tracking-[0.1em] uppercase text-bg-primary bg-accent py-4 px-8 rounded-sm no-underline transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_var(--color-accent-glow)]">
+          View selected work
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
@@ -36,6 +35,10 @@ export default function Hero() {
             />
           </svg>
         </a>
+        <a href="/Carlos_Rojas_Senior_Software_Engineer_EN.pdf" download className="inline-flex items-center font-mono text-[0.75rem] font-medium tracking-[0.1em] uppercase text-text-primary border border-border py-4 px-8 rounded-sm no-underline transition-all duration-300 hover:border-accent hover:text-accent">CV · English</a>
+        <a href="/Carlos_Rojas_Ingeniero_Software_Senior_ES.pdf" download className="inline-flex items-center font-mono text-[0.75rem] font-medium tracking-[0.1em] uppercase text-text-primary border border-border py-4 px-8 rounded-sm no-underline transition-all duration-300 hover:border-accent hover:text-accent">CV · Español</a>
+        <a href="#contact" className="inline-flex items-center font-mono text-[0.75rem] font-medium tracking-[0.1em] uppercase text-text-secondary border border-border py-4 px-8 rounded-sm no-underline transition-all duration-300 hover:border-accent hover:text-text-primary">Contact me</a>
+        </div>
       </Container>
       <div className="scroll-hint-line absolute bottom-12 left-8 font-mono text-[0.65rem] tracking-[0.15em] uppercase text-text-muted [writing-mode:vertical-lr] flex items-center gap-4 opacity-0 animate-fade-in [animation-delay:1.5s] max-md:hidden">
         Scroll

@@ -5,29 +5,22 @@ import SkillTag from "@/components/ui/SkillTag";
 
 const categories = [
   {
-    title: "Languages",
-    skills: ["TypeScript", "JavaScript", "Java", "Scala", "Python", "HTML / CSS", "Bash"],
+    title: "Leadership & architecture",
+    skills: ["Engineering strategy", "Technical roadmaps", "Team mentoring", "Architecture reviews", "System decomposition", "Distributed systems", "Event-driven architecture"],
   },
   {
-    title: "Frontend",
-    skills: ["React", "Next.js", "Angular", "Svelte", "Vue", "Polymer", "Tailwind CSS"],
+    title: "Platform engineering",
+    skills: ["Java / Spring Boot", "Scala / Akka", "Kafka / Kafka Streams", "PostgreSQL / Redis", "AWS / CDK", "Docker / Kubernetes", "CI/CD"],
   },
   {
-    title: "Backend",
-    skills: ["Spring Boot", "Node.js", "Express", "Akka", "Flask", "LangChain", "REST APIs"],
+    title: "Product delivery",
+    skills: ["TypeScript", "React / Next.js", "Angular", "Flutter", "Testing and quality", "Performance", "Observability"],
   },
   {
-    title: "Data & Messaging",
-    skills: ["PostgreSQL", "MySQL", "Redis", "Kafka", "RabbitMQ", "DynamoDB", "ElasticSearch"],
+    title: "Core tools",
+    skills: ["Python", "Node.js", "REST APIs", "Redis", "Linux", "Git", "OAuth2 / OpenID"],
   },
-  {
-    title: "DevOps & Cloud",
-    skills: ["Docker", "Kubernetes", "AWS", "Jenkins", "CI/CD", "Linux", "Git"],
-  },
-  {
-    title: "Architecture & Testing",
-    skills: ["Microservices", "MVC", "OOD", "Functional Patterns", "OAuth2 / OpenID", "Playwright", "Puppeteer"],
-  },
+
 ];
 
 export default function SkillsSection() {
@@ -35,7 +28,7 @@ export default function SkillsSection() {
     <section className="py-24 max-md:py-16" id="skills">
       <Container>
         <ScrollReveal>
-          <SectionLabel text="02 / Tech Stack" />
+          <SectionLabel text="02 / Capabilities" />
         </ScrollReveal>
         <ScrollReveal>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-10 mt-8 max-md:grid-cols-1">

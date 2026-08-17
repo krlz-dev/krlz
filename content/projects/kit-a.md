@@ -1,6 +1,6 @@
 ---
 title: "kit-a — Architecture & Planning Toolkit"
-description: "Browser-based toolkit for designing system architecture diagrams and project timelines with drag-and-drop, smart connections, and multi-format export."
+description: "Browser-based architecture and planning toolkit with drag-and-drop diagrams covering more than 1,800 cloud components."
 stack: ["React", "TypeScript", "Canvas API", "Node.js", "Cloud Storage"]
 url: "https://kit-a.com/"
 date: "2026-02-01"

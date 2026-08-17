@@ -1,6 +1,9 @@
-# Carlos Rojas — Software Engineer | krlz.dev
+# Carlos Rojas — Senior Software Engineer | krlz.dev
 
-> Senior Software Engineer with MSc. in Software Engineering and 14+ years of experience in full-stack development, microservices architecture, cloud-native systems, and AI-powered applications. Based in Santiago, Chile.
+> Senior Software Engineer who designs reliable distributed systems and production platforms for healthcare, logistics and data-intensive products. Based in Santiago, Chile and available for international remote collaboration.
+
+- [Download CV — English](https://krlz.dev/Carlos_Rojas_Senior_Software_Engineer_EN.pdf)
+- [Descargar CV — Español](https://krlz.dev/Carlos_Rojas_Ingeniero_Software_Senior_ES.pdf)
 
 Carlos Rojas specializes in Java, Scala, TypeScript, and Python. He has built healthcare platforms processing millions of patient records (FHIR/Medmij compliant), logistics and telemetry systems on AWS, and AI applications using LangChain and RAG architectures. He holds a Master's degree from Innopolis University, Russia.
 
@@ -16,14 +19,11 @@ Carlos Rojas specializes in Java, Scala, TypeScript, and Python. He has built he
 - [COFAR Labs Data Systems](https://krlz.dev/projects/cofar-data-systems/): System module improvements and monolith-to-microservices migration for a pharmaceutical laboratory.
 - [E-Constitucional](https://krlz.dev/projects/econstitucional/): Bolivia's first free online constitutional encyclopedia, built with the Vice Presidency Office.
 
-## Skills
+## Capabilities
 
-- **Languages:** TypeScript, JavaScript, Java, Scala, Python, HTML/CSS, Bash
-- **Frontend:** React, Next.js, Angular, Svelte, Vue, Tailwind CSS
-- **Backend:** Spring Boot, Node.js, Express, Akka, Flask, LangChain
-- **Data & Messaging:** PostgreSQL, MySQL, Redis, Kafka, RabbitMQ, DynamoDB, ElasticSearch
-- **DevOps & Cloud:** Docker, Kubernetes, AWS, Jenkins, CI/CD, Linux
-- **Architecture:** Microservices, MVC, OOD, Functional Patterns, OAuth2/OpenID, FHIR
+- **Leadership & architecture:** Engineering strategy, technical roadmaps, team mentoring, architecture reviews, system decomposition, distributed systems, event-driven architecture
+- **Platform engineering:** Java/Spring Boot, Scala/Akka, Kafka/Kafka Streams, PostgreSQL/Redis, AWS/CDK, Docker/Kubernetes, CI/CD
+- **Product delivery:** TypeScript, React/Next.js, Angular, Flutter, testing and quality, performance, observability
 
 ## Education
 
