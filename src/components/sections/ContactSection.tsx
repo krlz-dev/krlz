@@ -19,13 +19,7 @@ export default function ContactSection() {
             <div className="flex justify-center gap-4 flex-wrap">
               <ContactLink
                 href="/Carlos_Rojas_Senior_Software_Engineer_EN.pdf"
-                label="CV · English"
-                icon={<span aria-hidden="true">↓</span>}
-                download
-              />
-              <ContactLink
-                href="/Carlos_Rojas_Ingeniero_Software_Senior_ES.pdf"
-                label="CV · Español"
+                label="Download CV"
                 icon={<span aria-hidden="true">↓</span>}
                 download
               />

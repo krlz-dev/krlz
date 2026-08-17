@@ -35,8 +35,7 @@ export default function Hero() {
             />
           </svg>
         </a>
-        <a href="/Carlos_Rojas_Senior_Software_Engineer_EN.pdf" download className="inline-flex items-center font-mono text-[0.75rem] font-medium tracking-[0.1em] uppercase text-text-primary border border-border py-4 px-8 rounded-sm no-underline transition-all duration-300 hover:border-accent hover:text-accent">CV · English</a>
-        <a href="/Carlos_Rojas_Ingeniero_Software_Senior_ES.pdf" download className="inline-flex items-center font-mono text-[0.75rem] font-medium tracking-[0.1em] uppercase text-text-primary border border-border py-4 px-8 rounded-sm no-underline transition-all duration-300 hover:border-accent hover:text-accent">CV · Español</a>
+        <a href="/Carlos_Rojas_Senior_Software_Engineer_EN.pdf" download className="inline-flex items-center font-mono text-[0.75rem] font-medium tracking-[0.1em] uppercase text-text-primary border border-border py-4 px-8 rounded-sm no-underline transition-all duration-300 hover:border-accent hover:text-accent">Download CV</a>
         <a href="#contact" className="inline-flex items-center font-mono text-[0.75rem] font-medium tracking-[0.1em] uppercase text-text-secondary border border-border py-4 px-8 rounded-sm no-underline transition-all duration-300 hover:border-accent hover:text-text-primary">Contact me</a>
         </div>
       </Container>

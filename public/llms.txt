@@ -2,8 +2,7 @@
 
 > Senior Software Engineer who designs reliable distributed systems and production platforms for healthcare, logistics and data-intensive products. Based in Santiago, Chile and available for international remote collaboration.
 
-- [Download CV — English](https://krlz.dev/Carlos_Rojas_Senior_Software_Engineer_EN.pdf)
-- [Descargar CV — Español](https://krlz.dev/Carlos_Rojas_Ingeniero_Software_Senior_ES.pdf)
+- [Download CV](https://krlz.dev/Carlos_Rojas_Senior_Software_Engineer_EN.pdf)
 
 Carlos Rojas specializes in Java, Scala, TypeScript, and Python. He has built healthcare platforms processing millions of patient records (FHIR/Medmij compliant), logistics and telemetry systems on AWS, and AI applications using LangChain and RAG architectures. He holds a Master's degree from Innopolis University, Russia.
 
