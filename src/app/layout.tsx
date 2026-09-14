@@ -178,6 +178,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Analitica autoalojada y sin cookies (Umami). No requiere banner de
+            consentimiento y pesa ~2 KB. Panel: https://umami.codiva.cl */}
+        {process.env.NODE_ENV === "production" && (
+          <script
+            defer
+            src="https://umami.codiva.cl/script.js"
+            data-website-id="3e2194a6-d787-4d4f-af91-375f577d578c"
+          />
+        )}
       </head>
       <body>
         <Navbar />
