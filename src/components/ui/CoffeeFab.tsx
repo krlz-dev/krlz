@@ -52,16 +52,23 @@ export default function CoffeeFab() {
 
   const shown = scrolled && !footerVisible;
 
+  // Tucked back in once the footer has taken over, ready for the next trip up.
+  useEffect(() => {
+    if (!shown) setOpen(false);
+  }, [shown]);
+
   const goToFooter = () => {
     const footer = document.querySelector("footer");
     if (!footer) return;
+    // Expand on press so touch users — who never get a hover — see the label
+    // travel down with them instead of a bare circle.
+    setOpen(true);
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)")
       .matches;
     footer.scrollIntoView({
       behavior: reduced ? "auto" : "smooth",
       block: "end",
     });
-    setOpen(false);
   };
 
   return (
