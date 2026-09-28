@@ -5,19 +5,17 @@ import { useEffect, useRef, useState } from "react";
 /**
  * Floating coffee cup, pinned to the right edge.
  *
- * Two behaviours, picked by capability rather than screen width — an iPad with
- * a keyboard is wide and has no hover, a touchscreen laptop has both:
+ * Behaviour is split by capability rather than screen width — an iPad with a
+ * keyboard is wide and has no hover, a touchscreen laptop has both:
  *
  *   hover devices : rests half-tucked off the edge, slides flush on hover.
- *   touch devices : slides in from the right on its own, shows the label for a
- *                   moment, then tucks itself back to a peeking cup.
+ *   touch devices : stays tucked until tapped. The first tap slides it in and
+ *                   reveals the label, the second scrolls to the footer.
  *
- * Pressing it does not link out. It smooth-scrolls to the footer, where the
- * real Buy Me a Coffee button lives, and the footer observer then hides the
- * cup — the gesture reads as a hand-off instead of an interruption.
+ * Nothing moves on its own, and pressing it never links out: it smooth-scrolls
+ * to the footer, where the real Buy Me a Coffee button lives, and the footer
+ * observer then hides the cup.
  */
-const PEEK_DELAY_MS = 2600;
-
 export default function CoffeeFab() {
   const [scrolled, setScrolled] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -25,7 +23,7 @@ export default function CoffeeFab() {
   const [canHover, setCanHover] = useState(true);
   const ref = useRef<HTMLButtonElement>(null);
 
-  // Capability check, kept in sync if the user docks/undocks a mouse.
+  // Capability check, kept in sync if the user docks or undocks a mouse.
   useEffect(() => {
     const mq = window.matchMedia("(hover: hover)");
     const apply = () => setCanHover(mq.matches);
@@ -56,24 +54,27 @@ export default function CoffeeFab() {
 
   const shown = scrolled && !footerVisible;
 
-  // Touch: slide in expanded, then settle into the peeking state.
+  // Reset once it is out of sight, ready for the next trip up.
   useEffect(() => {
-    if (canHover) return;
-    if (!shown) {
-      setOpen(false);
+    if (!shown) setOpen(false);
+  }, [shown]);
+
+  // Touch: pressing anywhere else tucks it back in.
+  useEffect(() => {
+    if (canHover || !open) return;
+    const onDown = (e: PointerEvent) => {
+      if (!ref.current?.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", onDown);
+    return () => document.removeEventListener("pointerdown", onDown);
+  }, [open, canHover]);
+
+  const handleClick = () => {
+    // Touch devices get no hover, so the first tap only slides it in.
+    if (!canHover && !open) {
+      setOpen(true);
       return;
     }
-    setOpen(true);
-    const timer = setTimeout(() => setOpen(false), PEEK_DELAY_MS);
-    return () => clearTimeout(timer);
-  }, [shown, canHover]);
-
-  // Hover devices: reset once it is out of sight.
-  useEffect(() => {
-    if (canHover && !shown) setOpen(false);
-  }, [shown, canHover]);
-
-  const goToFooter = () => {
     const footer = document.querySelector("footer");
     if (!footer) return;
     setOpen(true);
@@ -99,7 +100,7 @@ export default function CoffeeFab() {
       aria-label="Support this work — scroll to the footer"
       aria-hidden={!shown}
       tabIndex={shown ? 0 : -1}
-      onClick={goToFooter}
+      onClick={handleClick}
       onFocus={() => setOpen(true)}
       onBlur={() => setOpen(false)}
       {...hoverHandlers}
