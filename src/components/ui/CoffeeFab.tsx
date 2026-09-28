@@ -5,21 +5,22 @@ import { useEffect, useRef, useState } from "react";
 /**
  * Floating coffee cup, pinned to the right edge.
  *
- * Rests half-tucked off the edge so it stays out of the way while reading,
- * and slides fully in when hovered or tapped. On touch devices there is no
- * hover, so the first tap opens it and the second one follows the link —
- * otherwise a peeking button would navigate on an accidental brush.
+ * It does not link out. Pressing it scrolls to the footer, where the real
+ * Buy Me a Coffee button lives — so the cup is an invitation, not the
+ * transaction. The footer observer then tucks it away on arrival, which makes
+ * the gesture feel like the button handed you off.
  *
- * Hides itself while the footer is on screen, since the footer carries its
- * own Buy Me a Coffee button.
+ * Rests half-tucked off the edge so it stays out of the reading column and
+ * slides flush on hover/focus. Honours prefers-reduced-motion for both the
+ * transition and the scroll.
  */
 export default function CoffeeFab() {
   const [scrolled, setScrolled] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
   const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLAnchorElement>(null);
+  const ref = useRef<HTMLButtonElement>(null);
 
-  // Hide while the footer is in view.
+  // Hide while the footer is in view — it has its own button.
   useEffect(() => {
     const footer = document.querySelector("footer");
     if (!footer) return;
@@ -39,7 +40,7 @@ export default function CoffeeFab() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Tapping elsewhere tucks it back in.
+  // Pressing outside tucks it back in (touch devices have no mouseleave).
   useEffect(() => {
     if (!open) return;
     const onDown = (e: PointerEvent) => {
@@ -51,37 +52,37 @@ export default function CoffeeFab() {
 
   const shown = scrolled && !footerVisible;
 
-  const handleClick = (e: React.MouseEvent) => {
-    // Touch devices get no hover, so the first tap only reveals the button.
-    const canHover = window.matchMedia("(hover: hover)").matches;
-    if (!canHover && !open) {
-      e.preventDefault();
-      setOpen(true);
-    }
+  const goToFooter = () => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)")
+      .matches;
+    footer.scrollIntoView({
+      behavior: reduced ? "auto" : "smooth",
+      block: "end",
+    });
+    setOpen(false);
   };
 
   return (
-    <a
+    <button
       ref={ref}
-      href="https://buymeacoffee.com/krlz"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Buy me a coffee"
+      type="button"
+      aria-label="Support this work — scroll to the footer"
       aria-hidden={!shown}
       tabIndex={shown ? 0 : -1}
-      onClick={handleClick}
+      onClick={goToFooter}
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
       onFocus={() => setOpen(true)}
       onBlur={() => setOpen(false)}
       className={[
         "fixed z-50 right-0 top-1/2 -mt-7",
-        "flex items-center h-14 rounded-l-full",
-        "bg-[#FFDD00] text-black no-underline select-none",
+        "flex items-center h-14 rounded-l-full cursor-pointer",
+        "bg-[#FFDD00] text-black border-0 select-none",
         "shadow-[0_4px_16px_rgba(0,0,0,0.28)]",
         "motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out",
         open ? "pl-5 pr-5 gap-2.5" : "w-14 pl-3 pr-0 gap-0",
-        // Resting state peeks out; opening slides it flush with the edge.
         shown
           ? open
             ? "opacity-100 translate-x-0 pointer-events-auto"
@@ -101,6 +102,6 @@ export default function CoffeeFab() {
       >
         Buy me a coffee
       </span>
-    </a>
+    </button>
   );
 }
