@@ -16,8 +16,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
  * has no hover, a touchscreen laptop has both.
  */
 const PEEK_PX = 20; // how far it sits off the edge at rest
-const COMMIT_PX = 44; // pull past this and releasing navigates
-const MAX_PULL_PX = 96; // rubber band ceiling
+const COMMIT_PX = 26; // pull past this and releasing navigates
+const MAX_PULL_PX = 40; // rubber band ceiling — keeps the cup anchored to the edge
 
 export default function CoffeeFab() {
   const [scrolled, setScrolled] = useState(false);
