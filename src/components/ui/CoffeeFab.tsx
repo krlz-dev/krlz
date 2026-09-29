@@ -1,45 +1,19 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 /**
  * Floating coffee cup, pinned to the right edge.
  *
- * The cup is a handle you pull, not a link. Press it and it follows your
- * finger leftwards with rubber-band resistance; let go and *then* it scrolls
- * down to the footer, where the real Buy Me a Coffee button lives. Releasing
- * before the commit threshold springs it back — so the gesture is cancellable
- * and nothing happens until you lift.
- *
- * Hover devices also get the resting peek-and-expand on hover. Behaviour is
- * split by capability, not screen width: an iPad with a keyboard is wide and
- * has no hover, a touchscreen laptop has both.
+ * Deliberately plain: a round cup that is always fully visible once the hero
+ * is behind us, and scrolls down to the footer when pressed. The footer
+ * carries the real Buy Me a Coffee button, so this is an invitation, not the
+ * transaction — and it disappears on arrival so the two never compete.
  */
-const PEEK_PX = 20; // how far it sits off the edge at rest
-const COMMIT_PX = 26; // pull past this and releasing navigates
-const MAX_PULL_PX = 40; // rubber band ceiling — keeps the cup anchored to the edge
-
 export default function CoffeeFab() {
   const [scrolled, setScrolled] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [canHover, setCanHover] = useState(true);
-  const [pull, setPull] = useState(0);
-  const [pressed, setPressed] = useState(false);
-  const ref = useRef<HTMLButtonElement>(null);
-  const startX = useRef(0);
-  const dragging = useRef(false);
 
-  // Capability check, kept in sync if a mouse is docked or removed.
-  useEffect(() => {
-    const mq = window.matchMedia("(hover: hover)");
-    const apply = () => setCanHover(mq.matches);
-    apply();
-    mq.addEventListener("change", apply);
-    return () => mq.removeEventListener("change", apply);
-  }, []);
-
-  // Hide while the footer is in view — it carries its own button.
   useEffect(() => {
     const footer = document.querySelector("footer");
     if (!footer) return;
@@ -51,7 +25,6 @@ export default function CoffeeFab() {
     return () => observer.disconnect();
   }, []);
 
-  // Appear only once the hero is behind us.
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 400);
     onScroll();
@@ -61,16 +34,7 @@ export default function CoffeeFab() {
 
   const shown = scrolled && !footerVisible;
 
-  // Reset once out of sight, ready for the next trip up.
-  useEffect(() => {
-    if (!shown) {
-      setOpen(false);
-      setPull(0);
-      setPressed(false);
-    }
-  }, [shown]);
-
-  const goToFooter = useCallback(() => {
+  const goToFooter = () => {
     const footer = document.querySelector("footer");
     if (!footer) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)")
@@ -79,125 +43,31 @@ export default function CoffeeFab() {
       behavior: reduced ? "auto" : "smooth",
       block: "end",
     });
-  }, []);
-
-  const onPointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
-    startX.current = e.clientX;
-    dragging.current = true;
-    setPressed(true);
-    setOpen(true);
-    // Keep receiving moves even if the finger leaves the button.
-    ref.current?.setPointerCapture(e.pointerId);
   };
-
-  const onPointerMove = (e: React.PointerEvent<HTMLButtonElement>) => {
-    if (!dragging.current) return;
-    const dx = startX.current - e.clientX; // leftwards is positive
-    if (dx <= 0) {
-      setPull(0);
-      return;
-    }
-    // Rubber band: easy at first, increasingly stiff towards the ceiling.
-    const eased = MAX_PULL_PX * (1 - Math.exp(-dx / MAX_PULL_PX));
-    setPull(eased);
-  };
-
-  const endDrag = (commit: boolean) => {
-    dragging.current = false;
-    setPressed(false);
-    setPull(0);
-    if (commit) goToFooter();
-    if (!canHover) setOpen(false);
-  };
-
-  const onPointerUp = () => {
-    if (!dragging.current) return;
-    // A tap counts as a commit; a short pull that never reached the
-    // threshold springs back and does nothing.
-    endDrag(pull === 0 || pull >= COMMIT_PX);
-  };
-
-  const onPointerCancel = () => {
-    if (dragging.current) endDrag(false);
-  };
-
-  // Keyboard path — pointer events never fire for Enter/Space.
-  const onKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      goToFooter();
-    }
-  };
-
-  const hoverHandlers = canHover
-    ? {
-        onMouseEnter: () => setOpen(true),
-        onMouseLeave: () => !dragging.current && setOpen(false),
-      }
-    : {};
-
-  const committed = pull >= COMMIT_PX;
-  // Touch screens are small, so the cup tucks deeper when it is not in use.
-  const peek = canHover ? PEEK_PX : PEEK_PX + 6;
-  const restX = open ? 0 : peek;
-  const transform = shown
-    ? `translateX(${restX - pull}px) scale(${pressed ? (committed ? 1.04 : 0.98) : 1})`
-    : "translateX(110%)";
 
   return (
     <button
-      ref={ref}
       type="button"
-      aria-label="Support this work — pull or press to reach the footer"
+      onClick={goToFooter}
+      aria-label="Support this work — scroll to the footer"
       aria-hidden={!shown}
       tabIndex={shown ? 0 : -1}
-      onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
-      onPointerUp={onPointerUp}
-      onPointerCancel={onPointerCancel}
-      onKeyDown={onKeyDown}
-      onFocus={() => setOpen(true)}
-      onBlur={() => setOpen(false)}
-      {...hoverHandlers}
-      style={{
-        transform,
-        opacity: shown ? (open ? 1 : 0.9) : 0,
-        // While the finger is down the cup must track it with no lag; the
-        // spring back on release is what should be animated.
-        transition: dragging.current
-          ? "none"
-          : "transform 420ms cubic-bezier(0.34, 1.4, 0.64, 1), opacity 300ms ease-out, padding 300ms ease-out",
-        touchAction: "pan-y",
-      }}
+      title="Buy me a coffee"
       className={[
-        "fixed z-50 right-0 top-1/2",
-        "-mt-7 max-md:-mt-[21px]",
-        "flex items-center h-14 max-md:h-[42px] rounded-l-full cursor-grab active:cursor-grabbing",
-        "bg-[#FFDD00] text-black border-0 select-none",
-        committed
-          ? "shadow-[0_6px_24px_rgba(0,0,0,0.34)] max-md:shadow-[0_3px_12px_rgba(0,0,0,0.3)]"
-          : "shadow-[0_4px_16px_rgba(0,0,0,0.28)] max-md:shadow-[0_2px_8px_rgba(0,0,0,0.25)]",
-        open
-          ? "pl-5 pr-5 gap-2.5 max-md:pl-3.5 max-md:pr-4 max-md:gap-2"
-          : "w-14 max-md:w-[42px] pl-3 max-md:pl-2.5 pr-0 gap-0",
-        shown ? "pointer-events-auto" : "pointer-events-none",
+        "fixed z-50 right-4 top-1/2 max-md:right-3",
+        "-mt-6 max-md:-mt-[21px]",
+        "grid place-items-center size-12 max-md:size-[42px] rounded-full",
+        "bg-[#FFDD00] text-black border-0 cursor-pointer select-none",
+        "shadow-[0_2px_10px_rgba(0,0,0,0.25)]",
+        "motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out",
+        "hover:scale-110 active:scale-95",
+        shown
+          ? "opacity-100 scale-100 pointer-events-auto"
+          : "opacity-0 scale-75 pointer-events-none",
       ].join(" ")}
     >
-      <span
-        aria-hidden="true"
-        className="text-2xl max-md:text-lg leading-none shrink-0"
-      >
+      <span aria-hidden="true" className="text-xl max-md:text-lg leading-none">
         ☕
-      </span>
-      <span
-        className={[
-          "whitespace-nowrap font-medium leading-none overflow-hidden",
-          "max-md:text-[0.8rem]",
-          "transition-all duration-300",
-          open ? "max-w-[170px] opacity-100" : "max-w-0 opacity-0",
-        ].join(" ")}
-      >
-        Buy me a coffee
       </span>
     </button>
   );
