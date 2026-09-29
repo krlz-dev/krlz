@@ -137,7 +137,9 @@ export default function CoffeeFab() {
     : {};
 
   const committed = pull >= COMMIT_PX;
-  const restX = open ? 0 : PEEK_PX;
+  // Touch screens are small, so the cup tucks deeper when it is not in use.
+  const peek = canHover ? PEEK_PX : PEEK_PX + 6;
+  const restX = open ? 0 : peek;
   const transform = shown
     ? `translateX(${restX - pull}px) scale(${pressed ? (committed ? 1.04 : 0.98) : 1})`
     : "translateX(110%)";
@@ -168,22 +170,29 @@ export default function CoffeeFab() {
         touchAction: "pan-y",
       }}
       className={[
-        "fixed z-50 right-0 top-1/2 -mt-7",
-        "flex items-center h-14 rounded-l-full cursor-grab active:cursor-grabbing",
+        "fixed z-50 right-0 top-1/2",
+        "-mt-7 max-md:-mt-[21px]",
+        "flex items-center h-14 max-md:h-[42px] rounded-l-full cursor-grab active:cursor-grabbing",
         "bg-[#FFDD00] text-black border-0 select-none",
         committed
-          ? "shadow-[0_6px_24px_rgba(0,0,0,0.34)]"
-          : "shadow-[0_4px_16px_rgba(0,0,0,0.28)]",
-        open ? "pl-5 pr-5 gap-2.5" : "w-14 pl-3 pr-0 gap-0",
+          ? "shadow-[0_6px_24px_rgba(0,0,0,0.34)] max-md:shadow-[0_3px_12px_rgba(0,0,0,0.3)]"
+          : "shadow-[0_4px_16px_rgba(0,0,0,0.28)] max-md:shadow-[0_2px_8px_rgba(0,0,0,0.25)]",
+        open
+          ? "pl-5 pr-5 gap-2.5 max-md:pl-3.5 max-md:pr-4 max-md:gap-2"
+          : "w-14 max-md:w-[42px] pl-3 max-md:pl-2.5 pr-0 gap-0",
         shown ? "pointer-events-auto" : "pointer-events-none",
       ].join(" ")}
     >
-      <span aria-hidden="true" className="text-2xl leading-none shrink-0">
+      <span
+        aria-hidden="true"
+        className="text-2xl max-md:text-lg leading-none shrink-0"
+      >
         ☕
       </span>
       <span
         className={[
           "whitespace-nowrap font-medium leading-none overflow-hidden",
+          "max-md:text-[0.8rem]",
           "transition-all duration-300",
           open ? "max-w-[170px] opacity-100" : "max-w-0 opacity-0",
         ].join(" ")}
